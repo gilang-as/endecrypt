@@ -2,7 +2,7 @@ package endecrypt
 
 import (
 	"bytes"
-	"crypto/aes"
+	AES "crypto/aes"
 	"crypto/cipher"
 	"crypto/sha256"
 	"encoding/base64"
@@ -45,7 +45,7 @@ func (a *endecrypt) Encrypt(plainText string) string {
 	iv := fmt.Sprintf("%x", sha256.Sum256([]byte(a.SecretIV)))
 	iv = iv[0:16]
 
-	block, err := aes.NewCipher([]byte(key))
+	block, err := AES.NewCipher([]byte(key))
 	if err != nil {
 		panic(err)
 	}
@@ -53,7 +53,7 @@ func (a *endecrypt) Encrypt(plainText string) string {
 	ecb := cipher.NewCBCEncrypter(block, []byte(iv))
 	content := []byte(plainText)
 	content = PKCS5Padding(content, 16)
-	if len(content)%aes.BlockSize != 0 {
+	if len(content)%AES.BlockSize != 0 {
 		panic("plaintext is not a multiple of the block size")
 	}
 
@@ -71,7 +71,7 @@ func (a *endecrypt) Decrypt(cipherText string) string {
 	iv := fmt.Sprintf("%x", sha256.Sum256([]byte(a.SecretIV)))
 	iv = iv[0:16]
 
-	block, err := aes.NewCipher([]byte(key))
+	block, err := AES.NewCipher([]byte(key))
 	if err != nil {
 		panic(err)
 	}
