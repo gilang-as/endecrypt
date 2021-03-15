@@ -1,7 +1,8 @@
-# endecrypt
-
-
-Example
+### Instalation
+```bash
+go get gilang-as/endecrypt
+```
+### Example
 ```go
 package main
 
