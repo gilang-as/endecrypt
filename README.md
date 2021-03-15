@@ -1,6 +1,6 @@
 ### Instalation
 ```bash
-go get gilang-as/endecrypt
+go get github.com/gilang-as/endecrypt
 ```
 ### Example
 ```go
