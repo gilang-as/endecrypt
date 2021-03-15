@@ -1,12 +1,7 @@
-# endecrypt
-
-
-Example
-```go
 package main
 
 import (
-	"github.com/gilang-as/endecrypt"
+	"endecrypt"
 	"fmt"
 )
 
@@ -24,4 +19,3 @@ func main() {
 	decrypt := a.Decrypt(cipherText)
 	fmt.Println("After Decrypt : ", decrypt)
 }
-```
