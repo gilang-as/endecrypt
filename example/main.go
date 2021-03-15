@@ -1,8 +1,8 @@
 package main
 
 import (
-	"endecrypt"
 	"fmt"
+	"github.com/gilang-as/endecrypt"
 )
 
 func main() {

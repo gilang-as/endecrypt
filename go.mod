@@ -1,4 +1,4 @@
-module endecrypt
+module github.com/gilang-as/endecrypt
 
 go 1.16
 
